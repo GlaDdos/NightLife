@@ -1,0 +1,21 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "server for nightlife coordination app",
+  "main": "server.js",
+  "author": "GlaDdos",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.3",
+    "express-session": "^1.15.4",
+    "mongoose": "^4.11.3",
+    "morgan": "^1.8.2",
+    "passport": "^0.3.2",
+    "path": "^0.12.7"
+  }
+}
