@@ -13,6 +13,16 @@ require('dotenv').config();
 
 const app = express();
 
+const options = {
+  server: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } },
+  replset: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } }
+};
+
+mongoose.Promise = global.Promise;
+mongoose.connect(`mongodb://${process.env.MONGO_URL}`);
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'Database connection error! '));
+
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(session({
